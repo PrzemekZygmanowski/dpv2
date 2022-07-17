@@ -1,0 +1,156 @@
+@import "styles/scss/_variables.scss";
+// @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+.main-title {
+  font-size: 48px;
+  line-height: 60px;
+  font-family: $sansSerif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 64px;
+    line-height: 72px;
+  }
+}
+.main-subtitle {
+  font-size: 18px;
+  line-height: 25px;
+  font-family: $sansSerif;
+  font-weight: 300;
+  letter-spacing: 3px;
+
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 48px;
+  }
+}
+.header-title {
+  font-size: 42px;
+  line-height: 1.2;
+  font-family: $sansSerif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 60px;
+    line-height: 72px;
+  }
+}
+.header-subtitle {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: $sansSerif;
+  font-weight: 300;
+  letter-spacing: 3px;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 36px;
+  }
+}
+
+.section-title {
+  font-size: 36px;
+  font-family: $sansSerif;
+  font-weight: 500;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 48px;
+  }
+}
+
+.section-small-title {
+  font-family: $sansSerif;
+  font-size: 24px;
+  line-height: 1.8;
+  font-weight: 500;
+  text-transform: none;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 32px;
+  }
+}
+
+.section-small-subtitle {
+  font-family: $sansSerif;
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 500;
+  text-transform: none;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 28px;
+  }
+}
+
+.section-text {
+  font-family: $sansSerif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  text-transform: none;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 18px;
+  }
+}
+
+.icon-title {
+  color: $dp-black;
+  font-size: 24px;
+  font-family: $sansSerif;
+  font-weight: 300;
+  text-transform: uppercase;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 28px;
+  }
+}
+
+.icon-text {
+  color: $dp-black;
+  font-size: 16px;
+  font-family: $sansSerif;
+  font-weight: 300;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 18px;
+  }
+}
+
+.menu-link {
+  color: $dp-black;
+  font-size: 24px;
+  font-family: $sansSerif;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 24px;
+  }
+}
+
+.btn-link {
+  color: $dp-white;
+  font-size: 16px;
+  font-family: $sansSerif;
+  letter-spacing: 2.5px;
+  text-transform: none;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 20px;
+  }
+}
+
+.link-reset {
+  text-decoration: none;
+}
+
+.footer-text {
+  color: $dp-white;
+  font-family: $sansSerif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 20px;
+  }
+}

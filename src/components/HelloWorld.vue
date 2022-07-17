@@ -1,44 +1,85 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a target="_blank" href="https://vitejs.dev/">Vite</a> +
-      <a target="_blank" href="https://v2.vuejs.org/">Vue 2</a>.
-    </h3>
+  <div>
+    <div class="yellow box"></div>
+    <div class="black box"></div>
+    <div class="white box"></div>
   </div>
 </template>
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
+<script>
+export default {
+  name: "HelloWorld",
 
-h3 {
-  font-size: 1.2rem;
-}
+  data: () => ({
+    ecosystem: [
+      {
+        text: "vuetify-loader",
+        href: "https://github.com/vuetifyjs/vuetify-loader",
+      },
+      {
+        text: "github",
+        href: "https://github.com/vuetifyjs/vuetify",
+      },
+      {
+        text: "awesome-vuetify",
+        href: "https://github.com/vuetifyjs/awesome-vuetify",
+      },
+    ],
+    importantLinks: [
+      {
+        text: "Documentation",
+        href: "https://vuetifyjs.com",
+      },
+      {
+        text: "Chat",
+        href: "https://community.vuetifyjs.com",
+      },
+      {
+        text: "Made with Vuetify",
+        href: "https://madewithvuejs.com/vuetify",
+      },
+      {
+        text: "Twitter",
+        href: "https://twitter.com/vuetifyjs",
+      },
+      {
+        text: "Articles",
+        href: "https://medium.com/vuetify",
+      },
+    ],
+    whatsNext: [
+      {
+        text: "Explore components",
+        href: "https://vuetifyjs.com/components/api-explorer",
+      },
+      {
+        text: "Select a layout",
+        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
+      },
+      {
+        text: "Frequently Asked Questions",
+        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
+      },
+    ],
+  }),
+};
+</script>
 
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
+<style scoped lang="scss">
+@import "styles/global/_all.scss";
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    display: block;
-    text-align: left;
-  }
+.box {
+  height: 100px;
+  width: 100px;
+}
+.yellow {
+  background-color: $dp-yellow;
+}
+.black {
+  background-color: $dp-black;
+}
+.white {
+  border: 1px solid $dp-black;
+  background-color: $dp-white;
 }
 </style>

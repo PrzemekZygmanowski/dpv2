@@ -1,0 +1,15 @@
+@import "styles/scss/_variables.scss";
+.section-container {
+  margin: 40px auto 0 auto;
+  width: $mobileWidth;
+  min-height: auto;
+  @media (min-width: $desktopBreakpoint) {
+    max-width: $mobileBreakpoint;
+    margin: 80px auto 0 auto;
+  }
+}
+
+.dark-section-container {
+  background-color: $dp-black;
+  width: 100vw;
+}
