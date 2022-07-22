@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="ma-0 pa-0">
     <v-main>
       <Menu v-show="!isMobile"></Menu>
 

@@ -22,7 +22,7 @@ export default {
   vuetify,
   data: () => ({
     home: {
-      altText: "MB LOGO",
+      altText: "D&P",
       icon: "data/img/logo/MBblack.png",
       url: "/",
       text: "START",
@@ -61,18 +61,17 @@ export default {
 @import "styles/global/_all.scss";
 .menu-container {
   width: 100vw;
-  background-color: $dp-white !important;
+  background-color: $dp-grey !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
   z-index: 1000000;
   .v-toolbar__content {
     margin: 0 auto;
     width: $desktopBreakpoint;
   }
   .menu_link {
-    color: $dp-black;
+    color: $dp-white;
     .main-logo {
       height: 24px;
     }
@@ -95,9 +94,13 @@ export default {
   .menu_link {
     display: inline-block;
     padding: 0 auto 25px auto;
-    color: $dp-black;
+    color: $dp-white;
     font-weight: 500;
     position: relative;
+    &:hover {
+      background-color: transparent;
+      color: $dp-yellow;
+    }
     &:after {
       transform: scaleX(0);
       content: "";

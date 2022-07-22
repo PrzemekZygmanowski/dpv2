@@ -68,7 +68,7 @@ export default {
       max-height: 100vh;
       margin: 0 auto;
       position: absolute;
-      color: $mb-white;
+      color: $dp-white;
       display: flex;
       align-items: center;
       justify-content: center;
