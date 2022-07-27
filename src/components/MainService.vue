@@ -1,7 +1,7 @@
 <template>
-  <div class="section-container">
+  <v-container class="section-container pa-0 d-flex flex-column align-center">
     <v-container
-      class="pa-0 ma-0 d-flex flex-md-column-and-down small-about_container"
+      class="pa-0 ma-0 mb-8 d-flex flex-md-column-and-down small-about_container"
     >
       <div class="small-about_img-wrapper">
         <img
@@ -17,7 +17,7 @@
       </div>
     </v-container>
     <LinkButton :btnProps="btnProps"></LinkButton>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -56,10 +56,19 @@ export default {
   text-align: center;
 }
 .small-about_container {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @media (min-width: $mobileBreakpoint) {
+    flex-direction: row;
+    margin-bottom: 60px;
+  }
   .small-about_img-wrapper {
-    width: 50%;
+    width: 100%;
     @media (min-width: $mobileBreakpoint) {
-      width: 100%;
+      width: 50%;
     }
     .small-about_img {
       overflow: hidden;
@@ -71,12 +80,14 @@ export default {
     }
   }
   .small-about_overview {
-    max-width: 100%;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    @media (min-width: $mobileBreakpoint) {
+      width: 50%;
+    }
     .small-about_link {
       color: $dp-black;
     }

@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      iconColor: '#000080',
+      iconColor: "#000080",
     };
   },
   props: {
@@ -26,14 +26,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .big-icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  color: $mb-black;
-  border: 0.5px solid $mb-blue;
+  color: $dp-black;
+  border: 0.5px solid $dp-yellow;
   border-radius: 5px;
   width: $mobileWidth;
   min-height: 300px;
@@ -44,13 +44,13 @@ export default {
     min-height: 400px;
   }
   @media (min-width: $desktopBreakpoint) {
-    width: 240px;
+    width: 300px;
   }
   .big-icon__first-wrapper {
     position: relative;
     height: 120px;
     width: 120px;
-    border: 2px solid $mb-blue;
+    border: 2px solid $dp-yellow;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -65,7 +65,7 @@ export default {
       align-items: center;
       height: 90px;
       width: 90px;
-      background-color: $mb-blue;
+      background-color: $dp-yellow;
       border-radius: 50%;
       @media (min-width: $mobileBreakpoint) {
         height: 80px;
@@ -75,7 +75,7 @@ export default {
         height: 30px;
         font-size: 20px;
         font-weight: 400;
-        color: $mb-white;
+        color: $dp-white;
       }
     }
   }

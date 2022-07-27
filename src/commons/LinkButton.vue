@@ -5,6 +5,8 @@
     :width="btnProps.btnWidth"
     :outlined="btnProps.outlined"
     class="btn-link btn_link"
+    tile
+    large
     depressed
     elevation="3"
     >{{ btnProps.text }}</v-btn
@@ -23,11 +25,11 @@ export default {
       type: Object,
       default() {
         return {
-          link: '/',
-          color: '#fafffa',
+          link: "/",
+          color: "#fafffa",
           btnWidth: 340,
           outlined: false,
-          text: '',
+          text: "",
         };
       },
     },
@@ -36,7 +38,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .btn_link {
   text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
 }

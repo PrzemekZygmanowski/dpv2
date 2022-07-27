@@ -10,6 +10,7 @@
       :text="textOverviewProps.text"
     />
     <MainService :owner="mainServiceProps.owner"></MainService>
+    <BigIconOverview :icons="bigIconOverviewProps.icons"></BigIconOverview>
   </div>
 </template>
 
@@ -17,6 +18,7 @@
 import MainHeader from "@/components/MainHeader.vue";
 import TextOverview from "@/components/Text-Overview.vue";
 import MainService from "@/components/MainService.vue";
+import BigIconOverview from "@/components/BigIconsOverview.vue";
 
 export default {
   name: "Home",
@@ -25,6 +27,7 @@ export default {
     MainHeader,
     TextOverview,
     MainService,
+    BigIconOverview,
   },
   data() {
     return {
@@ -40,14 +43,45 @@ export default {
       mainServiceProps: {
         owner: {
           imageUrl: "data/img/pictures/MB_header.jpg",
-          imageName: "Michał_Buzar",
-          title: "Michał Buzar",
-          subtitle: "Radca Prawny",
+          imageName: "butla_11",
+          title: "Lorem",
+          subtitle: "ipsum",
           about:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
         },
+      },
+      bigIconOverviewProps: {
+        icons: [
+          {
+            id: 1,
+            title: "Profesjonalizm",
+            icon: "fa-solid fa-certificate",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          },
+          {
+            id: 2,
+            title: "Empatia",
+            icon: "fa-solid fa-dove",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          },
+          {
+            id: 3,
+            title: "Doświadczenie",
+            icon: "fa-solid fa-shield",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          },
+        ],
       },
     };
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: auto;
+}
+</style>

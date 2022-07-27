@@ -1,21 +1,42 @@
 <template>
-  <v-app class="ma-0 pa-0">
-    <v-main>
+  <v-app class="reset" v-resize="onResize">
+    <v-main class="ma-0 pa-0">
       <Menu v-show="!isMobile"></Menu>
-
+      <MobileMenu v-show="isMobile"></MobileMenu>
       <router-view />
+      <Footer></Footer>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import Menu from "@/components/Menu.vue";
+import MobileMenu from "@/components/Mobile-Menu.vue";
+import Footer from "@/components/Footer.vue";
+import breakPointMixin from "@/mixins/breakPointMixin.js";
 
 export default {
-  components: { Menu },
+  components: { Menu, Footer, MobileMenu },
+  mixins: [breakPointMixin],
+
   name: "App",
   data: () => ({
     //
   }),
+  computed: {
+    function() {
+      return this.isMobile();
+    },
+  },
 };
 </script>
+
+<style scoped>
+.reset {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  max-width: auto;
+  width: 100vh;
+}
+</style>
