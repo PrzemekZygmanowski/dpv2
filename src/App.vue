@@ -1,5 +1,5 @@
 <template>
-  <v-app class="reset" v-resize="onResize">
+  <v-app v-resize="onResize" class="reset">
     <v-main class="ma-0 pa-0">
       <Menu v-show="!isMobile"></Menu>
       <MobileMenu v-show="isMobile"></MobileMenu>
@@ -36,7 +36,6 @@ export default {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
-  max-width: auto;
   width: 100vh;
 }
 </style>

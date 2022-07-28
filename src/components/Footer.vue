@@ -4,7 +4,6 @@
     :height="height"
     padless
     class="mt-8 d-flex flex-column justify-space-between"
-    v-resize="onResize"
   >
     <v-col
       class="text-center footer-text footer__copy pa-0 d-flex align-center justify-center"
@@ -30,11 +29,6 @@ export default {
     title: {
       type: String,
       default: "d&p Wiktor Moneta",
-    },
-  },
-  computed: {
-    function() {
-      return this.isMobile();
     },
   },
 };

@@ -1,17 +1,9 @@
 <template>
   <div class="overflow-hidden mobile-menu_container">
     <div class="mobile-menu_burger">
-      <v-btn
-        :color="btnColor"
-        elevation="4"
-        fab
-        small
-        @click="active = !active"
-      >
-        <font-awesome-icon
-          class="mobile-menu_burger-icon"
-          icon="fa-solid fa-bars"
-      /></v-btn>
+      <v-btn :color="btnColor" elevation="4" fab @click="active = !active">
+        <img :src="btnIcon" class="svg-yellow mobile-menu_burger-icon" />
+      </v-btn>
     </div>
     <v-bottom-navigation
       fixed
@@ -22,13 +14,12 @@
     >
       <div v-for="link in links" :key="link.id" class="mobile-menu_wrapper">
         <router-link class="mobile-menu_link menu-link" :to="link.url">
-          <v-img
-            v-if="link.img"
-            :src="link.img"
-            :aspect-ratio="1"
-            :width="width" />
-          <font-awesome-icon v-if="link.icon" :icon="link.icon"
-        /></router-link>
+          <img
+            v-if="link.icon"
+            :src="link.icon"
+            class="svg-grey mobile-menu_burger-icon"
+          />
+        </router-link>
       </div>
     </v-bottom-navigation>
   </div>
@@ -41,7 +32,8 @@ export default {
       value: 1,
       active: false,
       width: 24,
-      btnColor: "#69b9ff",
+      btnColor: "#3b3d42",
+      btnIcon: "data/icons/bars-solid.svg",
     };
   },
   props: {
@@ -51,26 +43,26 @@ export default {
         return [
           {
             id: 1,
-            img: "data/img/logo/MBblack.png",
+            icon: "data/icons/house-solid.svg",
             url: "/",
             text: "Start",
           },
           {
             id: 2,
-            text: "O mnie",
-            icon: "fa-solid fa-user-tie",
-            url: "/owner",
+            text: "Oferta",
+            icon: "data/icons/bottle-droplet-solid.svg",
+            url: "/services",
           },
           {
             id: 3,
-            text: "Kancelaria",
-            icon: "fa-solid fa-building-columns",
-            url: "/firm",
+            text: "Rekomendacje",
+            icon: "data/icons/heart-circle-plus-solid.svg",
+            url: "/opinions",
           },
           {
             id: 4,
             text: "Kontakt",
-            icon: "fa-solid fa-phone-flip",
+            icon: "data/icons/phone-solid.svg",
             url: "/contact",
           },
         ];
@@ -89,7 +81,7 @@ export default {
     right: 5%;
     z-index: 10000;
     .mobile-menu_burger-icon {
-      color: $dp-white;
+      height: 30px;
     }
   }
   .mobile-menu_wrapper {
@@ -101,6 +93,9 @@ export default {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
+      .mobile-menu_burger-icon {
+        height: 30px;
+      }
     }
   }
 }

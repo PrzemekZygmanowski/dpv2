@@ -62,6 +62,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   @media (min-width: $mobileBreakpoint) {
+    min-height: 30vh;
     flex-direction: row;
     margin-bottom: 60px;
   }

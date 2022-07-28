@@ -54,21 +54,39 @@ export default {
         icons: [
           {
             id: 1,
-            title: "Profesjonalizm",
-            icon: "fa-solid fa-certificate",
+            title: "butle turystyczne",
+            icon: "data/icons/fire-flame-simple-solid.svg",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            iconBtnProps: {
+              link: "/services",
+              color: "#f5bf42",
+              outlined: true,
+              text: "więcej",
+            },
           },
           {
             id: 2,
-            title: "Empatia",
-            icon: "fa-solid fa-dove",
+            title: "butle 33kg",
+            icon: "data/icons/fire-burner-solid.svg",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            iconBtnProps: {
+              link: "/services",
+              color: "#f5bf42",
+              outlined: true,
+              text: "więcej",
+            },
           },
           {
             id: 3,
-            title: "Doświadczenie",
-            icon: "fa-solid fa-shield",
+            title: "dwutlenek węgla",
+            icon: "data/icons/glass-mug-variant.svg",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            iconBtnProps: {
+              link: "/services",
+              color: "#f5bf42",
+              outlined: true,
+              text: "więcej",
+            },
           },
         ],
       },
@@ -79,9 +97,8 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: auto;
 }
 </style>

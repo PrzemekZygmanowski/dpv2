@@ -2,16 +2,21 @@
   <div class="big-icon-container">
     <div class="big-icon__first-wrapper">
       <div class="big-icon__second-wrapper">
-        <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
+        <img :src="icon.icon" class="svg-white big-icon_icon" />
       </div>
     </div>
     <h3 class="icon-title" v-html="icon.title"></h3>
     <p class="icon-text">{{ icon.text }}</p>
+    <SmallButton :btnProps="btnProps"></SmallButton>
   </div>
 </template>
 
 <script>
+import SmallButton from "./SmallButton.vue";
+
 export default {
+  components: { SmallButton },
+
   data() {
     return {
       iconColor: "#000080",
@@ -19,6 +24,9 @@ export default {
   },
   props: {
     icon: {
+      type: Object,
+    },
+    btnProps: {
       type: Object,
     },
   },
@@ -70,6 +78,9 @@ export default {
       @media (min-width: $mobileBreakpoint) {
         height: 80px;
         width: 80px;
+      }
+      .big-icon_icon {
+        height: 40px;
       }
       .big-icon {
         height: 30px;

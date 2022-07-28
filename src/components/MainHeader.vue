@@ -33,9 +33,10 @@ export default {
 .main-header {
   height: 80vh;
   max-height: 100vh;
-  width: 100%;
+  width: 100vw;
   @media (min-width: $desktopBreakpoint) {
     max-height: 640px;
+    width: 100vw;
   }
   .main-header__container {
     display: flex;
@@ -44,7 +45,7 @@ export default {
     flex-direction: row;
     margin: 0 auto;
     height: 100%;
-    width: 100%;
+    width: 100vw;
 
     .main-header__picture {
       width: 100vw;
@@ -63,7 +64,7 @@ export default {
       }
     }
     .main-header__text-container {
-      width: 100%;
+      width: 100vw;
       height: 80vh;
       max-height: 100vh;
       margin: 0 auto;

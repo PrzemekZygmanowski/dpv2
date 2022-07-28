@@ -1,7 +1,7 @@
 <template>
   <div class="big-icon__first-wrapper">
     <div class="big-icon__second-wrapper">
-      <font-awesome-icon class="big-icon icon-title" :icon="icon" />
+      <img src="data/icons/fire-burner-solid.svg" class="svg-white" />
     </div>
   </div>
 </template>
@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      iconColor: '#000080',
+      iconColor: "#000080",
     };
   },
   props: {
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 
 .big-icon__first-wrapper {
   position: relative;
@@ -48,6 +48,10 @@ export default {
     @media (min-width: $mobileBreakpoint) {
       height: 80px;
       width: 80px;
+    }
+    .svg-white {
+      filter: invert(0%) sepia(92%) saturate(0%) hue-rotate(272deg)
+        brightness(113%) contrast(108%);
     }
     .big-icon {
       height: 30px;
