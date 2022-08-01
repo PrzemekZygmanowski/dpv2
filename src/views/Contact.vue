@@ -1,8 +1,22 @@
 <template>
   <div class="contact">
-    <h1>This is a contact page</h1>
+    <Map></Map>
+    <ContactOverview></ContactOverview>
   </div>
 </template>
+<script>
+import Map from "@/components/Map.vue";
+import ContactOverview from "@/components/ContactOverview.vue";
+
+export default {
+  name: "Contact",
+
+  components: {
+    Map,
+    ContactOverview,
+  },
+};
+</script>
 
 <style>
 @media (min-width: 1024px) {
