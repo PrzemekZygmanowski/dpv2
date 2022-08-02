@@ -23,11 +23,9 @@
         >{{ email.email }}</a
       >
     </div>
-    <div class="mt-8">
+    <div class="mt-8 d-flex flex-column align-center">
       <Section-title v-show="secondTitle" :title="secondTitle"></Section-title>
-      <span class="section-text" v-show="offer" :title="offer">{{
-        offer
-      }}</span>
+      <span class="section-text" v-show="offer">{{ offer }}</span>
     </div>
   </div>
 </template>
@@ -75,12 +73,12 @@ export default {
     },
     secondTitle: {
       type: String,
-      default: "Jesteś zainteresowany stałą współpracą",
+      default: "Indywidualna oferta",
     },
     offer: {
       type: String,
       default:
-        "skontaktuj sie z nami, na pewno przygotujemy dla Ciebie ofertę która Cię usatysfakcjonuje",
+        "Jeśli jesteś zainteresowany indywidualną ofertą, skontaktuj sie z nami, na pewno przygotujemy dla Ciebie propozycję która Cię usatysfakcjonuje",
     },
   },
 };

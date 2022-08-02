@@ -6,17 +6,36 @@
       <div class="small-about_img-wrapper">
         <img
           class="small-about_img"
-          :src="owner.imageUrl"
-          :alt="owner.imageName"
+          :src="service.imageUrl"
+          :alt="service.imageName"
         />
       </div>
       <div class="small-about_overview">
-        <Section-title :title="owner.title"></Section-title>
-        <h4 class="section-small-subtitle" v-html="owner.subtitle"></h4>
-        <p class="section-text" v-html="owner.about"></p>
+        <Section-title :title="service.title"></Section-title>
+        <h4
+          class="section-small-subtitle"
+          v-show="service.subtitle"
+          v-html="service.subtitle"
+        ></h4>
+        <p
+          class="section-text"
+          v-show="service.about"
+          v-html="service.about"
+        ></p>
+        <div
+          :key="`${price.label}-${price.amount}`"
+          v-for="price in prices"
+          v-show="prices"
+          class="service_prices-container"
+        >
+          <p class="section-text">
+            {{ price.label }} -
+            <strong class="section-text price-text">{{ price.amount }}</strong>
+          </p>
+        </div>
       </div>
     </v-container>
-    <LinkButton :btnProps="btnProps"></LinkButton>
+    <LinkButton v-show="btnProps" :btnProps="btnProps"></LinkButton>
   </v-container>
 </template>
 
@@ -29,21 +48,16 @@ import vuetify from "@/plugins/vuetify";
 export default {
   vuetify,
   components: { SectionTitle, LinkButton },
-  data() {
-    return {
-      btnProps: {
-        link: "/services",
-        color: "#3b3d42",
-        btnWidth: 340,
-        outlined: false,
-        text: "Dowiedz się więcej",
-      },
-    };
-  },
-  // @ is an alias to /src
+
   props: {
-    owner: {
+    service: {
       type: Object,
+    },
+    btnProps: {
+      type: Object,
+    },
+    prices: {
+      type: Array,
     },
   },
 };
@@ -74,9 +88,9 @@ export default {
     .small-about_img {
       overflow: hidden;
       object-fit: cover;
-      width: $mobileWidth;
+      width: 100%;
+
       @media (min-width: $mobileBreakpoint) {
-        width: $mobileBreakpoint;
       }
     }
   }
@@ -88,6 +102,10 @@ export default {
     align-items: center;
     @media (min-width: $mobileBreakpoint) {
       width: 50%;
+    }
+    .price-text {
+      font-weight: bold;
+      color: $dp-yellow;
     }
     .small-about_link {
       color: $dp-black;

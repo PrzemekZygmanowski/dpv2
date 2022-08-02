@@ -9,7 +9,10 @@
       :title="textOverviewProps.title"
       :text="textOverviewProps.text"
     />
-    <MainService :owner="mainServiceProps.owner"></MainService>
+    <MainService
+      :service="mainServiceProps.service"
+      :btnProps="mainServiceProps.btnProps"
+    ></MainService>
     <BigIconOverview :icons="bigIconOverviewProps.icons"></BigIconOverview>
   </div>
 </template>
@@ -41,13 +44,20 @@ export default {
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       },
       mainServiceProps: {
-        owner: {
+        service: {
           imageUrl: "data/img/pictures/MB_header.jpg",
           imageName: "butla_11",
           title: "Lorem",
           subtitle: "ipsum",
           about:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        },
+        btnProps: {
+          link: "/services",
+          color: "#3b3d42",
+          btnWidth: 340,
+          outlined: false,
+          text: "Dowiedz się więcej",
         },
       },
       bigIconOverviewProps: {
