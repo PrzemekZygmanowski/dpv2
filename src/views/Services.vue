@@ -52,6 +52,7 @@ export default {
       },
       firstServiceProps: {
         service: {
+          orientation: "right",
           imageUrl: "data/img/service_1.jpg",
           imageName: "butle turystyczne",
           title: "butle turystyczne",
@@ -66,6 +67,7 @@ export default {
       },
       secondServiceProps: {
         service: {
+          orientation: "left",
           imageUrl: "data/img/service_2.jpg",
           imageName: "butla 11kg",
           title: "Butle 11 kg",
@@ -80,6 +82,7 @@ export default {
       },
       thirdServiceProps: {
         service: {
+          orientation: "right",
           imageUrl: "data/img/service_3.jpg",
           imageName: "butla 33kg",
           title: "Butle 33kg",
@@ -94,6 +97,7 @@ export default {
       },
       fourthServiceProps: {
         service: {
+          orientation: "left",
           imageUrl: "data/img/service_4.jpg",
           imageName: "Dwutlenek węgla",
           title: "Dwutlenek węgla",

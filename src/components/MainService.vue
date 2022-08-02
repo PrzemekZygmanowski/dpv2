@@ -1,7 +1,8 @@
 <template>
   <v-container class="section-container pa-0 d-flex flex-column align-center">
     <v-container
-      class="pa-0 ma-0 mb-8 d-flex flex-md-column-and-down small-about_container"
+      class="pa-0 ma-0 mb-8 small-about_container"
+      :class="`small-about_container-${service.orientation}`"
     >
       <div class="small-about_img-wrapper">
         <img
@@ -80,6 +81,7 @@ export default {
     flex-direction: row;
     margin-bottom: 60px;
   }
+
   .small-about_img-wrapper {
     width: 100%;
     @media (min-width: $mobileBreakpoint) {
@@ -110,6 +112,16 @@ export default {
     .small-about_link {
       color: $dp-black;
     }
+  }
+}
+.small-about_container-right {
+  @media (min-width: $mobileBreakpoint) {
+    flex-direction: row-reverse;
+  }
+}
+.small-about_container-left {
+  @media (min-width: $mobileBreakpoint) {
+    flex-direction: row;
   }
 }
 </style>

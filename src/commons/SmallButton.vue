@@ -50,8 +50,8 @@ export default {
   .small-btn_icon {
     height: 20px;
 
-    filter: invert(84%) sepia(65%) saturate(973%) hue-rotate(321deg)
-      brightness(97%) contrast(99%);
+    filter: invert(21%) sepia(87%) saturate(2426%) hue-rotate(226deg)
+      brightness(90%) contrast(115%);
   }
 }
 </style>

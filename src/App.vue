@@ -36,6 +36,5 @@ export default {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
-  width: 100vh;
 }
 </style>

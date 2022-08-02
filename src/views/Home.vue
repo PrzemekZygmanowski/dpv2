@@ -12,8 +12,10 @@
     <MainService
       :service="mainServiceProps.service"
       :btnProps="mainServiceProps.btnProps"
+      :prices="mainServiceProps.prices"
     ></MainService>
     <BigIconOverview :icons="bigIconOverviewProps.icons"></BigIconOverview>
+    <TextOverview :title="opinionsProps.title" :text="opinionsProps.text" />
   </div>
 </template>
 
@@ -45,7 +47,8 @@ export default {
       },
       mainServiceProps: {
         service: {
-          imageUrl: "data/img/pictures/MB_header.jpg",
+          orientation: "left",
+          imageUrl: "data/img/service_2.jpg",
           imageName: "butla_11",
           title: "Lorem",
           subtitle: "ipsum",
@@ -59,6 +62,7 @@ export default {
           outlined: false,
           text: "Dowiedz się więcej",
         },
+        prices: [{ id: 1, label: "Cena już od", amount: "200 zł" }],
       },
       bigIconOverviewProps: {
         icons: [
@@ -99,6 +103,10 @@ export default {
             },
           },
         ],
+      },
+      opinionsProps: {
+        title: "Rekomendacje",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
       },
     };
   },

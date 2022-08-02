@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden mobile-menu_container">
+  <div class="overflow-hidden mobile-menu_container d-md-none">
     <div class="mobile-menu_burger">
       <v-btn :color="btnColor" elevation="4" fab @click="active = !active">
         <img :src="btnIcon" class="svg-yellow mobile-menu_burger-icon" />
@@ -53,12 +53,7 @@ export default {
             icon: "data/icons/bottle-droplet-solid.svg",
             url: "/services",
           },
-          {
-            id: 3,
-            text: "Rekomendacje",
-            icon: "data/icons/heart-circle-plus-solid.svg",
-            url: "/opinions",
-          },
+
           {
             id: 4,
             text: "Kontakt",

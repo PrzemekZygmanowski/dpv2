@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="menu-container ma-0 pa-0">
+  <v-app-bar class="menu-container ma-0 pa-0 d-none d-lg-block">
     <router-link class="menu_link menu-link" :to="home.url" exact>
       <img :src="home.icon" class="main-logo" :alt="home.altText" />
       {{ home.text }}
@@ -34,12 +34,7 @@ export default {
         icon: "fa-solid fa-user-tie",
         url: "/services",
       },
-      {
-        id: 2,
-        text: "REKOMENDACJE",
-        icon: "fa-solid fa-building-columns",
-        url: "/opinions",
-      },
+
       {
         id: 3,
         text: "KONTAKT",
