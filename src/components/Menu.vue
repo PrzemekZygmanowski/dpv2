@@ -61,7 +61,7 @@ export default {
 @import "styles/global/_all.scss";
 .menu-container {
   width: 100vw;
-  background-color: $dp-grey !important;
+  background-color: $dp-white !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +71,7 @@ export default {
     width: $desktopBreakpoint;
   }
   .menu_link {
-    color: $dp-white;
+    color: $dp-grey;
     .main-logo {
       height: 24px;
     }
@@ -94,7 +94,7 @@ export default {
   .menu_link {
     display: inline-block;
     padding: 0 auto 25px auto;
-    color: $dp-white;
+    color: $dp-grey;
     font-weight: 500;
     position: relative;
     &:hover {

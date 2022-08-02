@@ -59,7 +59,7 @@ export default {
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             iconBtnProps: {
               link: "/services",
-              color: "#f5bf42",
+              color: "#1b31de",
               outlined: true,
               text: "więcej",
             },
@@ -71,7 +71,7 @@ export default {
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             iconBtnProps: {
               link: "/services",
-              color: "#f5bf42",
+              color: "#1b31de",
               outlined: true,
               text: "więcej",
             },
@@ -83,7 +83,7 @@ export default {
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             iconBtnProps: {
               link: "/services",
-              color: "#f5bf42",
+              color: "#1b31de",
               outlined: true,
               text: "więcej",
             },

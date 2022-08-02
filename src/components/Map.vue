@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section-container map-container">
     <GmapMap
       :center="{ lat: 10, lng: 10 }"
       :zoom="7"
@@ -72,3 +72,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
