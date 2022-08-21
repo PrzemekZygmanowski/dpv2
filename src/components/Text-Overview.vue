@@ -1,7 +1,7 @@
 <template transition="slide-y-transition">
   <div class="section-container text-overview_container">
     <Section-title v-if="title" :title="title"></Section-title>
-    <p v-if="text" class="section-text text-overview_text">{{ text }}</p>
+    <p v-if="text" class="section-text text-overview_text" v-html="text"></p>
   </div>
 </template>
 

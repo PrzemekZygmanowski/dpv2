@@ -33,7 +33,7 @@ import MainHeader from "@/components/MainHeader.vue";
 import TextOverview from "@/components/Text-Overview.vue";
 import MainService from "@/components/MainService.vue";
 export default {
-  name: "Home",
+  name: "Services",
 
   components: {
     MainHeader,

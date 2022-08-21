@@ -26,7 +26,6 @@ const breakPointMixin = {
   },
   computed: {
     isMobile: function () {
-      console.log(this.windowSize.x < this.maxWidth);
       return this.windowSize.x < this.maxWidth;
     },
   },

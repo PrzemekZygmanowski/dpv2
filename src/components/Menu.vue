@@ -31,14 +31,16 @@ export default {
       {
         id: 1,
         text: "USŁUGI",
-        icon: "fa-solid fa-user-tie",
         url: "/services",
       },
-
       {
         id: 3,
+        text: "WSPÓŁPRACA",
+        url: "/affiliation",
+      },
+      {
+        id: 4,
         text: "KONTAKT",
-        icon: "fa-solid fa-phone-flip",
         url: "/contact",
       },
     ],

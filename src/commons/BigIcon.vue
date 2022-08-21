@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      iconColor: "#000080",
+      iconColor: "#1b31de",
     };
   },
   props: {

@@ -9,14 +9,12 @@
       :title="textOverviewProps.title"
       :text="textOverviewProps.text"
     />
-    <Map></Map>
     <ContactOverview></ContactOverview>
   </div>
 </template>
 
 <script>
 import MainHeader from "@/components/MainHeader.vue";
-import Map from "@/components/Map.vue";
 import ContactOverview from "@/components/ContactOverview.vue";
 import TextOverview from "@/components/Text-Overview.vue";
 
@@ -24,7 +22,6 @@ export default {
   name: "Contact",
 
   components: {
-    Map,
     ContactOverview,
     MainHeader,
     TextOverview,

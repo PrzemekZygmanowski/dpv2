@@ -105,8 +105,8 @@ export default {
         ],
       },
       opinionsProps: {
-        title: "Rekomendacje",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
+        title: "Zainteresowaliśmy Cię?",
+        text: "skontaktuj się z nami:",
       },
     };
   },

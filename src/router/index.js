@@ -5,7 +5,7 @@ import Home from "../views/Home.vue";
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   base: import.meta.env.BASE_URL,
   routes: [
     {
@@ -18,11 +18,15 @@ const router = new VueRouter({
       name: "services",
       component: () => import("../views/Services.vue"),
     },
-
+    {
+      path: "/affiliation",
+      name: "affiliation",
+      component: () => import("../views/Affiliation.vue"),
+    },
     {
       path: "/contact",
       name: "contact",
-      component: () => import("../views/contact.vue"),
+      component: () => import("../views/Contact.vue"),
     },
   ],
 });
