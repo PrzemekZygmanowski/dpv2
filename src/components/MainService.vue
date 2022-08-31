@@ -78,6 +78,7 @@ export default {
   align-items: center;
   @media (min-width: $mobileBreakpoint) {
     min-height: 30vh;
+
     flex-direction: row;
     margin-bottom: 60px;
   }
@@ -93,6 +94,7 @@ export default {
       width: 100%;
 
       @media (min-width: $mobileBreakpoint) {
+        max-height: 400px;
       }
     }
   }

@@ -50,7 +50,7 @@ export default {
       mainServiceProps: {
         service: {
           orientation: 'left',
-          imageUrl: 'data/img/service_2.jpg',
+          imageUrl: 'data/img/service_2.webp',
           imageName: 'butla_11',
           title: 'Lorem',
           subtitle: 'ipsum',

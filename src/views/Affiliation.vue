@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import MainHeader from "@/components/MainHeader.vue";
-import TextOverview from "@/components/Text-Overview.vue";
-import SpecialServiceLine from "@/components/SpecialServiceLine.vue";
+import MainHeader from '@/components/MainHeader.vue';
+import TextOverview from '@/components/Text-Overview.vue';
+import SpecialServiceLine from '@/components/SpecialServiceLine.vue';
 
 export default {
-  name: "Affiliation",
+  name: 'Affiliation',
 
   components: {
     MainHeader,
@@ -33,16 +33,16 @@ export default {
   data() {
     return {
       mainHeaderProps: {
-        title: "Zarabiaj razem z nami",
-        image: "data/img/appliance-2257_1280.jpg",
+        title: 'Zarabiaj razem z nami',
+        image: 'data/img/wspolpraca_2.webp',
       },
       firstTextOverviewProps: {
-        title: "Twój własny punkt wymiany butli",
-        text: "Podejmiemy współpracę z osobami chcącymi prowadzić nasz punkt wymiany butli gazowych. Współpraca nie wymaga żadnego wkładu własnego.  Nawiążemy rónież współpracę z osobami prowadzącymi już punkt wymiany butli, zaproponujemy konkurencyjne warunki współpracy",
+        title: 'Twój własny punkt wymiany butli',
+        text: 'Podejmiemy współpracę z osobami chcącymi prowadzić nasz punkt wymiany butli gazowych. Współpraca nie wymaga żadnego wkładu własnego.  Nawiążemy rónież współpracę z osobami prowadzącymi już punkt wymiany butli, zaproponujemy konkurencyjne warunki współpracy',
       },
       secondTextOverviewProps: {
-        title: "Punkt wymiany butli",
-        text: "Punkt można prowadzić przy własnym domu, sklepie, lub prowadząc działalność gospodarczą, bezpłatnie dostarcyzmy butle oraz klatkę do ich przechowywania",
+        title: 'Punkt wymiany butli',
+        text: 'Punkt można prowadzić przy własnym domu, sklepie, lub prowadząc działalność gospodarczą, bezpłatnie dostarcyzmy butle oraz klatkę do ich przechowywania',
       },
     };
   },
