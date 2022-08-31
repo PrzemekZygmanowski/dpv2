@@ -2,12 +2,11 @@
   <v-app-bar class="menu-container ma-0 pa-0 d-none d-lg-block">
     <router-link class="menu_link menu-link" :to="home.url" exact>
       <img :src="home.icon" class="main-logo" :alt="home.altText" />
-      {{ home.text }}
     </router-link>
     <v-spacer></v-spacer>
     <div class="menu-wrapper">
       <div class="menu_link-wrapper" v-for="link in links" :key="link.id">
-        <router-link class="menu_link menu-link" :to="link.url" exact>{{
+        <router-link class="menu_link text menu-link" :to="link.url" exact>{{
           link.text
         }}</router-link>
       </div>
@@ -16,32 +15,32 @@
 </template>
 
 <script>
-import vuetify from "@/plugins/vuetify";
+import vuetify from '@/plugins/vuetify';
 
 export default {
   vuetify,
   data: () => ({
     home: {
-      altText: "D&P",
-      icon: "data/img/logo/MBblack.png",
-      url: "/",
-      text: "START",
+      altText: 'D&P',
+      icon: 'data/img/name.png',
+      url: '/',
+      text: 'START',
     },
     links: [
       {
         id: 1,
-        text: "USŁUGI",
-        url: "/services",
+        text: 'USŁUGI',
+        url: '/oferta',
       },
       {
         id: 3,
-        text: "WSPÓŁPRACA",
-        url: "/affiliation",
+        text: 'WSPÓŁPRACA',
+        url: '/wspolpraca',
       },
       {
         id: 4,
-        text: "KONTAKT",
-        url: "/contact",
+        text: 'KONTAKT',
+        url: '/kontact',
       },
     ],
   }),
@@ -55,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .menu-container {
   width: 100vw;
   background-color: $dp-white !important;
@@ -70,8 +69,12 @@ export default {
   .menu_link {
     color: $dp-grey;
     .main-logo {
-      height: 24px;
+      max-height: 100px;
     }
+  }
+  .logo_link {
+    overflow: hidden;
+    max-height: 100px;
   }
   .menu-wrapper {
     width: 600px;
@@ -98,18 +101,18 @@ export default {
       background-color: transparent;
       color: $dp-yellow;
     }
-    &:after {
-      transform: scaleX(0);
-      content: "";
-      position: absolute;
-      height: 2px;
-      background-color: $dp-yellow;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      transform-origin: bottom right;
-      transition: transform 0.25s ease-out;
-    }
+    // &.text:after {
+    //   transform: scaleX(0);
+    //   content: '';
+    //   position: absolute;
+    //   height: 2px;
+    //   background-color: $dp-yellow;
+    //   width: 100%;
+    //   left: 0;
+    //   bottom: 0;
+    //   transform-origin: bottom right;
+    //   transition: transform 0.25s ease-out;
+    // }
   }
   .router-link-active {
     transition: 0.25s ease-out;

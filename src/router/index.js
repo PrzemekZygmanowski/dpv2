@@ -1,34 +1,41 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: "hash",
+  mode: 'hash',
   base: import.meta.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: '/',
+      name: 'home',
       component: Home,
     },
     {
-      path: "/services",
-      name: "services",
-      component: () => import("../views/Services.vue"),
+      path: '/oferta',
+      name: 'services',
+      component: () => import('../views/Services.vue'),
     },
     {
-      path: "/affiliation",
-      name: "affiliation",
-      component: () => import("../views/Affiliation.vue"),
+      path: '/wspolpraca',
+      name: 'affiliation',
+      component: () => import('../views/Affiliation.vue'),
     },
     {
-      path: "/contact",
-      name: "contact",
-      component: () => import("../views/Contact.vue"),
+      path: '/kontact',
+      name: 'contact',
+      component: () => import('../views/Contact.vue'),
     },
   ],
+  scrollBehavior() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0, behavior: 'smooth' });
+      }, 200);
+    });
+  },
 });
 
 export default router;

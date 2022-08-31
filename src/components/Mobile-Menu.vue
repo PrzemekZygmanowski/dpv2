@@ -13,7 +13,7 @@
       color="indigo"
     >
       <div v-for="link in links" :key="link.id" class="mobile-menu_wrapper">
-        <router-link class="mobile-menu_link menu-link" :to="link.url">
+        <router-link class="mobile-menu_link menu-link" :to="link.url" exact>
           <img
             v-if="link.icon"
             :src="link.icon"
@@ -32,8 +32,8 @@ export default {
       value: 1,
       active: false,
       width: 24,
-      btnColor: "#3b3d42",
-      btnIcon: "data/icons/bars-solid.svg",
+      btnColor: '#3b3d42',
+      btnIcon: 'data/icons/bars-solid.svg',
     };
   },
   props: {
@@ -43,22 +43,27 @@ export default {
         return [
           {
             id: 1,
-            icon: "data/icons/house-solid.svg",
-            url: "/",
-            text: "Start",
+            icon: 'data/img/icon-color.png',
+            url: '/',
+            text: 'Start',
           },
           {
             id: 2,
-            text: "Oferta",
-            icon: "data/icons/bottle-droplet-solid.svg",
-            url: "/services",
+            text: 'Oferta',
+            icon: 'data/icons/bottle-droplet-solid.svg',
+            url: '/oferta',
           },
-
+          {
+            id: 3,
+            text: 'Współpraca',
+            icon: 'data/icons/dollar-sign-solid.svg',
+            url: '/wspolpraca',
+          },
           {
             id: 4,
-            text: "Kontakt",
-            icon: "data/icons/phone-solid.svg",
-            url: "/contact",
+            text: 'Kontakt',
+            icon: 'data/icons/phone-solid.svg',
+            url: '/kontact',
           },
         ];
       },
@@ -68,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .mobile-menu_container {
   .mobile-menu_burger {
     position: fixed;

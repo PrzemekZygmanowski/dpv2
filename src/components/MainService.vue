@@ -42,9 +42,9 @@
 
 <script>
 // @ is an alias to /src
-import SectionTitle from "@/commons/Section-Title.vue";
-import LinkButton from "@/commons/LinkButton.vue";
-import vuetify from "@/plugins/vuetify";
+import SectionTitle from '@/commons/Section-Title.vue';
+import LinkButton from '@/commons/LinkButton.vue';
+import vuetify from '@/plugins/vuetify';
 
 export default {
   vuetify,
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .small-about_title-container {
   width: 100%;
   text-align: center;
@@ -102,8 +102,10 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 10px 0;
     @media (min-width: $mobileBreakpoint) {
       width: 50%;
+      padding: 0 10px;
     }
     .price-text {
       font-weight: bold;

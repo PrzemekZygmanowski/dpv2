@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import Menu from "@/components/Menu.vue";
-import MobileMenu from "@/components/Mobile-Menu.vue";
-import Footer from "@/components/Footer.vue";
-import breakPointMixin from "@/mixins/breakPointMixin.js";
+import Menu from '@/components/Menu.vue';
+import MobileMenu from '@/components/Mobile-Menu.vue';
+import Footer from '@/components/Footer.vue';
+import breakPointMixin from '@/mixins/breakPointMixin.js';
 
 export default {
   components: { Menu, Footer, MobileMenu },
   mixins: [breakPointMixin],
 
-  name: "App",
+  name: 'App',
   data: () => ({
     //
   }),

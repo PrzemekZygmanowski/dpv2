@@ -4,8 +4,14 @@
       <div class="main-header__container">
         <img :src="image" class="main-header__picture" alt="dp" />
         <div class="main-header__text-container">
-          <h1 class="main-header__title main-title">{{ title }}</h1>
-          <h2 class="main-header__subtitle main-subtitle">{{ subtitle }}</h2>
+          <img v-show="logo" :src="logo" class="main-header___logo" />
+
+          <h1 v-show="!logo" class="main-header__title main-title">
+            {{ title }}
+          </h1>
+          <h2 class="main-header__subtitle main-subtitle">
+            {{ subtitle }}
+          </h2>
         </div>
       </div>
     </div>
@@ -24,12 +30,15 @@ export default {
     image: {
       type: String,
     },
+    logo: {
+      type: String,
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .main-header {
   height: 80vh;
   max-height: 100vh;
@@ -79,6 +88,9 @@ export default {
 
       @media (min-width: $desktopBreakpoint) {
         height: 640px;
+      }
+      .main-header___logo {
+        max-height: 30%;
       }
       .main-header__title {
         width: 90%;
