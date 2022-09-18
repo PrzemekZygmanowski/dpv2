@@ -31,38 +31,38 @@
 </template>
 
 <script>
-import breakPointMixin from "@/mixins/breakPointMixin.js";
+import breakPointMixin from '@/mixins/breakPointMixin.js';
 
 export default {
   mixins: [breakPointMixin],
 
   data() {
     return {
-      footerColor: "#192024",
-      copy: "data/img/svg/copyright-solid.svg",
+      footerColor: '#192024',
+      copy: 'data/img/svg/copyright-solid.svg',
       height: 125,
-      btnColor: "#69b9ff",
-      title: "d&p Wiktor Moneta",
+      btnColor: '#69b9ff',
+      title: 'd&p Wiktor Moneta',
       links: [
         {
           id: 0,
-          text: "START",
-          url: "/",
+          text: 'START',
+          url: '/',
         },
         {
           id: 1,
-          text: "USŁUGI",
-          url: "/services",
+          text: 'USŁUGI',
+          url: '/oferta',
         },
         {
           id: 3,
-          text: "WSPÓŁPRACA",
-          url: "/affiliation",
+          text: 'WSPÓŁPRACA',
+          url: '/wspolpraca',
         },
         {
           id: 4,
-          text: "KONTAKT",
-          url: "/contact",
+          text: 'KONTAKT',
+          url: '/kontakt',
         },
       ],
     };
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 
 .footer__copy {
   width: 100%;

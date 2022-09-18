@@ -21,10 +21,6 @@
       :service="thirdServiceProps.service"
       :prices="thirdServiceProps.prices"
     ></MainService>
-    <MainService
-      :service="fourthServiceProps.service"
-      :prices="fourthServiceProps.prices"
-    ></MainService>
   </div>
 </template>
 
@@ -95,21 +91,7 @@ export default {
           { id: 3, label: 'Butla 11kg trzecia', amount: '300 zł' },
         ],
       },
-      fourthServiceProps: {
-        service: {
-          orientation: 'left',
-          imageUrl: 'data/img/service_4.jpg',
-          imageName: 'Dwutlenek węgla',
-          title: 'Dwutlenek węgla',
-          about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-        },
-        prices: [
-          { id: 1, label: 'Butla 11kg pierwsza', amount: '200 zł' },
-          { id: 2, label: 'Butla 11kg druga', amount: '300 zł' },
-          { id: 3, label: 'Butla 11kg trzecia', amount: '300 zł' },
-        ],
-      },
+
       bigIconOverviewProps: {
         icons: [
           {

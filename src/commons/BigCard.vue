@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import SmallButton from "./SmallButton.vue";
+import SmallButton from './SmallButton.vue';
 
 export default {
   components: { SmallButton },
 
   data() {
     return {
-      iconColor: "#1b31de",
+      iconColor: '#1b31de',
     };
   },
   props: {
@@ -34,12 +34,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .big-icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   color: $dp-black;
   border: 0.5px solid $dp-yellow;
   border-radius: 5px;
@@ -52,7 +52,7 @@ export default {
     min-height: 400px;
   }
   @media (min-width: $desktopBreakpoint) {
-    width: 300px;
+    width: 80%;
   }
   .big-icon__first-wrapper {
     position: relative;

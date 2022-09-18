@@ -24,7 +24,7 @@ const router = new VueRouter({
       component: () => import('../views/Affiliation.vue'),
     },
     {
-      path: '/kontact',
+      path: '/kontakt',
       name: 'contact',
       component: () => import('../views/Contact.vue'),
     },

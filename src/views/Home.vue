@@ -16,7 +16,6 @@
       :prices="mainServiceProps.prices"
     ></MainService>
     <BigIconOverview :icons="bigIconOverviewProps.icons"></BigIconOverview>
-    <TextOverview :title="opinionsProps.title" :text="opinionsProps.text" />
   </div>
 </template>
 
@@ -39,23 +38,30 @@ export default {
     return {
       mainHeaderProps: {
         title: 'D&P',
-        subtitle: 'butle gazowe',
+        subtitle: 'TWÓJ DOSTAWCA GAZU ',
         image: 'data/img/gas-bottle-845409_1920.jpg',
         logo: 'data/img/logo.png',
       },
       textOverviewProps: {
-        title: 'Lorem Impsum',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        title: 'ZADZWOŃ I ZAMÓW GAZ',
+        text: 'DOSTARCZYMY GO DO CIEBIE MAKSYMALNIE W CIĄGU <strong style="color:#1b31de; font-weight:bold">90 MIN</strong></br> Zadzwoń do Nas:',
+        phoneNumbers:[
+          {
+            id: 1,
+            number: '504-405-295',
+          },
+          {
+            id: 2,
+            number: '513-439-938',
+          },
+        ];
       },
       mainServiceProps: {
         service: {
           orientation: 'left',
           imageUrl: 'data/img/service_2.webp',
           imageName: 'butla_11',
-          title: 'Lorem',
-          subtitle: 'ipsum',
-          about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+          title: 'Butle 11kg',
         },
         btnProps: {
           link: '/services',
@@ -64,7 +70,15 @@ export default {
           outlined: false,
           text: 'Dowiedz się więcej',
         },
-        prices: [{ id: 1, label: 'Cena już od', amount: '200 zł' }],
+        prices: [
+          { id: 1, label: 'PROPAN 11kg', amount: '100 zł' },
+          { id: 2, label: 'PROPAN BUTAN', amount: '95 zł' },
+          {
+            id: 3,
+            label: 'PROPAN BUTAN SYFON (do wózka widłowego)',
+            amount: '95 zł',
+          },
+        ],
       },
       bigIconOverviewProps: {
         icons: [
@@ -92,23 +106,7 @@ export default {
               text: 'więcej',
             },
           },
-          {
-            id: 3,
-            title: 'dwutlenek węgla',
-            icon: 'data/icons/glass-mug-variant.svg',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-            iconBtnProps: {
-              link: '/services',
-              color: '#1b31de',
-              outlined: true,
-              text: 'więcej',
-            },
-          },
         ],
-      },
-      opinionsProps: {
-        title: 'Zainteresowaliśmy Cię?',
-        text: 'skontaktuj się z nami:',
       },
     };
   },

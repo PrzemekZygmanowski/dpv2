@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import BigCard from "@/commons/BigCard.vue";
+import BigCard from '@/commons/BigCard.vue';
 
 export default {
   components: { BigCard },
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .big-icons-container {
   display: flex;
   flex-direction: column;
@@ -32,6 +32,11 @@ export default {
   justify-content: space-between;
   @media (min-width: $mobileBreakpoint) {
     flex-direction: row;
+  }
+  .big-icons-overview_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

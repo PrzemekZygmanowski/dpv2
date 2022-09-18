@@ -2,12 +2,24 @@
   <div class="section-container text-overview_container">
     <Section-title v-if="title" :title="title"></Section-title>
     <p v-if="text" class="section-text text-overview_text" v-html="text"></p>
+    <div
+      v-show="phoneNumbers"
+      :key="`${phoneNumber.id}-${phoneNumber.number}`"
+      v-for="phoneNumber in phoneNumbers"
+      class="contact__common-section"
+    >
+      <a
+        class="link-reset section-small-subtitle contact_link"
+        :href="`tel:${phoneNumber.number}`"
+        >{{ phoneNumber.number }}</a
+      >
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import SectionTitle from "@/commons/Section-Title.vue";
+import SectionTitle from '@/commons/Section-Title.vue';
 
 export default {
   components: { SectionTitle },
@@ -19,12 +31,15 @@ export default {
     text: {
       type: String,
     },
+    phoneNumbers: {
+      type: Array,
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .text-overview_container {
   display: flex;
   align-items: center;
@@ -35,7 +50,7 @@ export default {
     position: relative;
     display: inline-block;
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       height: 4px;
       background-color: $dp-yellow;
@@ -44,5 +59,13 @@ export default {
       bottom: 0;
     }
   }
+  .text-overview_text {
+    .text_important {
+      color: $dp-yellow;
+    }
+  }
+}
+.text_important {
+  color: $dp-yellow;
 }
 </style>
