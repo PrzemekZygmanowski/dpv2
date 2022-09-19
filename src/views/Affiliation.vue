@@ -9,10 +9,11 @@
       :title="firstTextOverviewProps.title"
       :text="firstTextOverviewProps.text"
     />
-    <SpecialServiceLine></SpecialServiceLine>
+    <SpecialServiceLine :cards="cards"></SpecialServiceLine>
     <TextOverview
       :title="secondTextOverviewProps.title"
       :text="secondTextOverviewProps.text"
+      :phoneNumbers="secondTextOverviewProps.phoneNumbers"
     />
   </div>
 </template>
@@ -34,16 +35,38 @@ export default {
     return {
       mainHeaderProps: {
         title: 'Zarabiaj razem z nami',
-        image: 'data/img/wspolpraca_2.webp',
+        image: 'data/img/affiliance.jpg',
       },
       firstTextOverviewProps: {
-        title: 'Twój własny punkt wymiany butli',
-        text: 'Podejmiemy współpracę z osobami chcącymi prowadzić nasz punkt wymiany butli gazowych. Współpraca nie wymaga żadnego wkładu własnego.  Nawiążemy rónież współpracę z osobami prowadzącymi już punkt wymiany butli, zaproponujemy konkurencyjne warunki współpracy',
+        title: 'Chcesz nawiązać współpracę?',
       },
       secondTextOverviewProps: {
-        title: 'Punkt wymiany butli',
-        text: 'Punkt można prowadzić przy własnym domu, sklepie, lub prowadząc działalność gospodarczą, bezpłatnie dostarcyzmy butle oraz klatkę do ich przechowywania',
+        title: 'Zainteresowaliśmy Cię',
+        text: 'Skontaktuj się z nami',
+        phoneNumbers: [
+          {
+            id: 1,
+            number: '536-334-447',
+          },
+        ],
       },
+      cards: [
+        {
+          id: 1,
+          title: 'Twój własny punkt </br> wymiany butli',
+          text: 'Podejmiemy współpracę z osobami chcącymi prowadzić nasz punkt wymiany butli gazowych. Współpraca nie wymaga żadnego wkładu własnego.',
+        },
+        {
+          id: 2,
+          title: 'Masz już punkt?',
+          text: 'Nic nie szkodzi. Nawiążemy również współpracę z osobami prowadzącymi już punkt wymiany butli, zaproponujemy konkurencyjne warunki współpracy',
+        },
+        {
+          id: 3,
+          title: 'Punkt wymiany butli',
+          text: 'Punkt można prowadzić przy własnym domu, sklepie, lub prowadząc działalność gospodarczą, bezpłatnie dostarczymy butle oraz klatkę do ich przechowywania',
+        },
+      ],
     };
   },
 };

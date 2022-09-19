@@ -29,7 +29,7 @@
           v-show="prices"
           class="service_prices-container"
         >
-          <p class="section-text">
+          <p class="section-text price_text">
             {{ price.label }} -
             <strong class="section-text price-text">{{ price.amount }}</strong>
           </p>
@@ -90,7 +90,7 @@ export default {
     }
     .small-about_img {
       overflow: hidden;
-      object-fit: cover;
+      object-fit: contain;
       width: 100%;
 
       @media (min-width: $mobileBreakpoint) {
@@ -127,5 +127,8 @@ export default {
   @media (min-width: $mobileBreakpoint) {
     flex-direction: row;
   }
+}
+.price_text {
+  text-align: center;
 }
 </style>

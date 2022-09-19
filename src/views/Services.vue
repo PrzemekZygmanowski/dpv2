@@ -44,51 +44,44 @@ export default {
       },
       textOverviewProps: {
         title: 'Nasza Oferta',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        text: 'Posiadamy w naszej ofercie butle gazowe w różnych rozmiarach. Zarówno butle turystyczne, jak i większe, 11kg i 33 kg. Poniżej nasza oferta:',
       },
       firstServiceProps: {
         service: {
           orientation: 'right',
           imageUrl: 'data/img/service_1.jpg',
-          imageName: 'butle turystyczne',
+          imageName: 'Butle turystyczne',
           title: 'butle turystyczne',
-          about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
         },
         prices: [
-          { id: 1, label: 'Butla 11kg pierwsza', amount: '200 zł' },
-          { id: 2, label: 'Butla 11kg druga', amount: '300 zł' },
-          { id: 3, label: 'Butla 11kg trzecia', amount: '300 zł' },
+          { id: 1, label: 'Butla 2kg', amount: '40 zł' },
+          { id: 2, label: 'Butla 3kg', amount: '50 zł' },
+          { id: 3, label: 'Butla 5kg', amount: '65 zł' },
         ],
       },
       secondServiceProps: {
         service: {
           orientation: 'left',
-          imageUrl: 'data/img/service_2.webp',
+          imageUrl: 'data/img/butla_11.jpg',
           imageName: 'butla 11kg',
           title: 'Butle 11 kg',
-          about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
         },
         prices: [
-          { id: 1, label: 'Butla 11kg pierwsza', amount: '200 zł' },
-          { id: 2, label: 'Butla 11kg druga', amount: '300 zł' },
-          { id: 3, label: 'Butla 11kg trzecia', amount: '300 zł' },
+          { id: 1, label: 'Propan', amount: '100 zł' },
+          { id: 2, label: 'Propan Butan', amount: '95 zł' },
+          { id: 3, label: 'Propan Butan z syfonem', amount: '95 zł' },
         ],
       },
       thirdServiceProps: {
         service: {
           orientation: 'right',
-          imageUrl: 'data/img/service_3.jpg',
+          imageUrl: 'data/img/butla_33.jpg',
           imageName: 'butla 33kg',
           title: 'Butle 33kg',
-          about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
         },
         prices: [
-          { id: 1, label: 'Butla 11kg pierwsza', amount: '200 zł' },
-          { id: 2, label: 'Butla 11kg druga', amount: '300 zł' },
-          { id: 3, label: 'Butla 11kg trzecia', amount: '300 zł' },
+          { id: 1, label: 'Propan 30kg', amount: '255 zł' },
+          { id: 2, label: 'Propan Butan 33kg', amount: '240 zł' },
         ],
       },
 

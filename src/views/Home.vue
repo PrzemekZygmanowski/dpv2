@@ -9,6 +9,7 @@
     <TextOverview
       :title="textOverviewProps.title"
       :text="textOverviewProps.text"
+      :phoneNumbers="textOverviewProps.phoneNumbers"
     />
     <MainService
       :service="mainServiceProps.service"
@@ -39,13 +40,13 @@ export default {
       mainHeaderProps: {
         title: 'D&P',
         subtitle: 'TWÓJ DOSTAWCA GAZU ',
-        image: 'data/img/gas-bottle-845409_1920.jpg',
+        image: 'data/img/gas_flame.jpg',
         logo: 'data/img/logo.png',
       },
       textOverviewProps: {
         title: 'ZADZWOŃ I ZAMÓW GAZ',
-        text: 'DOSTARCZYMY GO DO CIEBIE MAKSYMALNIE W CIĄGU <strong style="color:#1b31de; font-weight:bold">90 MIN</strong></br> Zadzwoń do Nas:',
-        phoneNumbers:[
+        text: 'DOSTARCZYMY GO DO CIEBIE MAKSYMALNIE W CIĄGU <strong style="color:#1b31de; font-weight:bold">90 MIN</strong></br> <p style="text-align:center; margin-top: 24px">Zadzwoń do Nas:</p>',
+        phoneNumbers: [
           {
             id: 1,
             number: '504-405-295',
@@ -54,12 +55,12 @@ export default {
             id: 2,
             number: '513-439-938',
           },
-        ];
+        ],
       },
       mainServiceProps: {
         service: {
           orientation: 'left',
-          imageUrl: 'data/img/service_2.webp',
+          imageUrl: 'data/img/butla_11.jpg',
           imageName: 'butla_11',
           title: 'Butle 11kg',
         },
@@ -86,7 +87,6 @@ export default {
             id: 1,
             title: 'butle turystyczne',
             icon: 'data/icons/fire-flame-simple-solid.svg',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
             iconBtnProps: {
               link: '/services',
               color: '#1b31de',
@@ -98,7 +98,6 @@ export default {
             id: 2,
             title: 'butle 33kg',
             icon: 'data/icons/fire-burner-solid.svg',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
             iconBtnProps: {
               link: '/services',
               color: '#1b31de',
