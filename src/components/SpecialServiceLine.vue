@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container v-show="!isMobile" class="section-container">
+    <v-container v-if="!isMobile" class="section-container">
       <v-timeline :dense="isMobile" :reverse="!isMobile">
         <v-timeline-item v-for="card in cards" :key="card.id" :color="dotColor">
           <v-card class="elevation-2 card">
@@ -14,7 +14,7 @@
         </v-timeline-item>
       </v-timeline>
     </v-container>
-    <v-container v-show="isMobile" class="pa-0">
+    <v-container v-else-if="isMobile" class="pa-0">
       <TextOverview
         v-for="card in cards"
         :key="card.id"
