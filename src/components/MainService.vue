@@ -112,6 +112,10 @@ export default {
     .price-text {
       font-weight: bold;
       color: $dp-yellow;
+      font-size: 20px;
+      @media (min-width: $desktopBreakpoint) {
+        font-size: 24px;
+      }
     }
     .small-about_link {
       color: $dp-black;

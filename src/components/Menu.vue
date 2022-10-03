@@ -40,7 +40,7 @@ export default {
       {
         id: 4,
         text: 'KONTAKT',
-        url: '/kontact',
+        url: '/kontakt',
       },
     ],
   }),

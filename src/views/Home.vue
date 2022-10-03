@@ -45,7 +45,7 @@ export default {
       },
       textOverviewProps: {
         title: 'ZADZWOŃ I ZAMÓW GAZ',
-        text: 'DOSTARCZYMY GO DO CIEBIE MAKSYMALNIE W CIĄGU <strong style="color:#1b31de; font-weight:bold">90 MIN</strong></br> <p style="text-align:center; margin-top: 24px">Zadzwoń do Nas:</p>',
+        text: 'DOSTARCZYMY GO DO CIEBIE MAKSYMALNIE W CIĄGU <strong class="price-text" style="color:#1976d2; font-size:20px; font-weight:bold">90 MIN</strong></br> <p style="text-align:center; margin-top: 24px">Zadzwoń do Nas:</p>',
         phoneNumbers: [
           {
             id: 1,
@@ -65,8 +65,8 @@ export default {
           title: 'Butle 11kg',
         },
         btnProps: {
-          link: '/services',
-          color: '#3b3d42',
+          link: '/oferta',
+          color: '#1976d2',
           btnWidth: 340,
           outlined: false,
           text: 'Dowiedz się więcej',
@@ -88,9 +88,9 @@ export default {
             title: 'butle turystyczne',
             icon: 'data/icons/fire-flame-simple-solid.svg',
             iconBtnProps: {
-              link: '/services',
-              color: '#1b31de',
-              outlined: true,
+              link: '/oferta',
+              color: '#1976d2',
+              outlined: false,
               text: 'więcej',
             },
           },
@@ -99,9 +99,9 @@ export default {
             title: 'butle 33kg',
             icon: 'data/icons/fire-burner-solid.svg',
             iconBtnProps: {
-              link: '/services',
-              color: '#1b31de',
-              outlined: true,
+              link: '/oferta',
+              color: '#1976d2',
+              outlined: false,
               text: 'więcej',
             },
           },

@@ -39,7 +39,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   color: $dp-black;
   border: 0.5px solid $dp-yellow;
   border-radius: 5px;
@@ -48,7 +48,7 @@ export default {
   padding: 7%;
   margin-bottom: 20px;
   @media (min-width: $mobileBreakpoint) {
-    width: 220px;
+    width: 80%;
     min-height: 400px;
   }
   @media (min-width: $desktopBreakpoint) {

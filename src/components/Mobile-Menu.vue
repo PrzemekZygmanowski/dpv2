@@ -18,6 +18,7 @@
             v-if="link.icon"
             :src="link.icon"
             class="svg-grey mobile-menu_burger-icon"
+            @click="active = !active"
           />
         </router-link>
       </div>
@@ -63,7 +64,7 @@ export default {
             id: 4,
             text: 'Kontakt',
             icon: 'data/icons/phone-solid.svg',
-            url: '/kontact',
+            url: '/kontakt',
           },
         ];
       },

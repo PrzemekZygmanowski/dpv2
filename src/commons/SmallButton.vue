@@ -4,23 +4,21 @@
       :color="btnProps.color"
       :to="btnProps.link"
       :outlined="btnProps.outlined"
-      :style="{ 'background-color': hover ? '#fafffa' : '#fafffa' }"
+      :style="{ 'background-color': hover ? '#1976d2' : '#1976d2' }"
       class="btn-link btn_link"
-      tile
-      ><span v-show="!isMobile">{{ btnProps.text }}</span>
-      <img :src="btnIcon" class="svg-white small-btn_icon"
-    /></v-btn>
+      ><span>{{ btnProps.text }}</span>
+    </v-btn>
   </v-hover>
 </template>
 
 <script>
-import breakPointMixin from "@/mixins/breakPointMixin.js";
+import breakPointMixin from '@/mixins/breakPointMixin.js';
 
 export default {
   mixins: [breakPointMixin],
   data() {
     return {
-      btnIcon: "data/icons/arrow-right-solid.svg",
+      btnIcon: 'data/icons/arrow-right-solid.svg',
     };
   },
   props: {
@@ -28,10 +26,10 @@ export default {
       type: Object,
       default() {
         return {
-          link: "/",
-          color: "#fafffa",
+          link: '/',
+          color: '#1976d2',
           outlined: true,
-          text: "",
+          text: '',
         };
       },
     },
@@ -45,7 +43,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 .btn_link {
   .small-btn_icon {
     height: 20px;

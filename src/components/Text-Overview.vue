@@ -9,7 +9,7 @@
       class="contact__common-section"
     >
       <a
-        class="link-reset section-small-subtitle contact_link"
+        class="link-reset section-small-title contact_link"
         :href="`tel:${phoneNumber.number}`"
         >{{ phoneNumber.number }}</a
       >
@@ -63,9 +63,26 @@ export default {
     .text_important {
       color: $dp-yellow;
     }
+    .price-text {
+      font-weight: bold;
+      color: $dp-yellow;
+      font-size: 20px;
+      @media (min-width: $desktopBreakpoint) {
+        font-size: 24px;
+      }
+    }
   }
 }
 .text_important {
   color: $dp-yellow;
+}
+
+.price-text {
+  font-weight: bold;
+  color: $dp-yellow;
+  font-size: 20px;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 24px;
+  }
 }
 </style>

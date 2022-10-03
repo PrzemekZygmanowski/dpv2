@@ -1,37 +1,51 @@
 <template>
   <div class="section-container d-flex flex-column align-center">
     <Section-title v-show="title" :title="title"></Section-title>
+    <h3 class="section-text">Zamówienia</h3>
     <div
       :key="`${phoneNumber.id}-${phoneNumber.number}`"
-      v-for="phoneNumber in phoneNumbers"
+      v-for="phoneNumber in contactForOrders"
       class="contact__common-section"
     >
       <a
-        class="link-reset section-small-subtitle contact_link"
+        class="link-reset section-small-title contact_link"
         :href="`tel:${phoneNumber.number}`"
         >{{ phoneNumber.number }}</a
       >
     </div>
+    <h3 class="section-text">Przedstawiciel handlowy</h3>
+    <div
+      :key="`${phoneNumber.id}-${phoneNumber.number}`"
+      v-for="phoneNumber in contacts"
+      class="contact__common-section"
+    >
+      <a
+        class="link-reset section-small-title contact_link"
+        :href="`tel:${phoneNumber.number}`"
+        >{{ phoneNumber.number }}</a
+      >
+    </div>
+    <h3 class="section-text">e-mail</h3>
     <div
       :key="`${email.id}-${email.email}`"
       v-for="email in mails"
       class="contact__common-section"
     >
       <a
-        class="link-reset section-small-subtitle contact_link"
+        class="link-reset section-small-title contact_link"
         :href="`mailto:${email.email}`"
         >{{ email.email }}</a
       >
     </div>
-    <div class="mt-8 d-flex flex-column align-center">
-      <Section-title v-show="secondTitle" :title="secondTitle"></Section-title>
-      <span class="section-text" v-show="offer">{{ offer }}</span>
+    <div class="mt-8 d-flex flex-column align-center" v-show="offer">
+      <Section-title :title="secondTitle"></Section-title>
+      <span class="section-text">{{ offer }}</span>
     </div>
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import SectionTitle from "@/commons/Section-Title.vue";
+import SectionTitle from '@/commons/Section-Title.vue';
 
 export default {
   components: { SectionTitle },
@@ -39,61 +53,36 @@ export default {
   props: {
     title: {
       type: String,
-      default: "skontaktuj sie z nami",
     },
-    phoneNumbers: {
+    contactForOrders: {
       type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            number: "123456678",
-          },
-          {
-            id: 2,
-            number: "999888777",
-          },
-        ];
-      },
+    },
+    contacts: {
+      type: Array,
     },
     mails: {
       type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            email: "qwe@qwe.com",
-          },
-          {
-            id: 2,
-            email: "rty@tyu.com",
-          },
-        ];
-      },
     },
     secondTitle: {
       type: String,
-      default: "Indywidualna oferta",
     },
     offer: {
       type: String,
-      default:
-        "Jeśli jesteś zainteresowany indywidualną ofertą, skontaktuj sie z nami, na pewno przygotujemy dla Ciebie propozycję która Cię usatysfakcjonuje",
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import "styles/global/_all.scss";
+@import 'styles/global/_all.scss';
 
 .contact_link {
   position: relative;
   padding-bottom: 2px;
-  color: $dp-black;
+  color: #1976d2;
   display: inline-block;
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     height: 2px;
     background-color: $dp-yellow;

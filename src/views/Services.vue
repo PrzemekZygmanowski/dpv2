@@ -51,7 +51,7 @@ export default {
           orientation: 'right',
           imageUrl: 'data/img/service_1.jpg',
           imageName: 'Butle turystyczne',
-          title: 'butle turystyczne',
+          title: 'Butle turystyczne',
         },
         prices: [
           { id: 1, label: 'Butla 2kg', amount: '40 zł' },
