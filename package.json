@@ -7,6 +7,8 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0",
     "gmap-vue": "^3.5.3",
     "vue": "^2.7.4",
     "vue-router": "^3.5.4",

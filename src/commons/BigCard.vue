@@ -2,7 +2,10 @@
   <div class="big-icon-container">
     <div class="big-icon__first-wrapper">
       <div class="big-icon__second-wrapper">
-        <img :src="icon.icon" class="svg-white big-icon_icon" />
+        <img
+          :src="backendUrl + icon.data.attributes.url"
+          class="svg-white big-icon_icon"
+        />
       </div>
     </div>
     <h3 class="icon-title" v-html="icon.title"></h3>
@@ -12,14 +15,16 @@
 </template>
 
 <script>
-import SmallButton from './SmallButton.vue';
+import SmallButton from "./SmallButton.vue";
 
 export default {
   components: { SmallButton },
 
   data() {
     return {
-      iconColor: '#1b31de',
+      backendUrl: "http://localhost:1337",
+
+      iconColor: "#1b31de",
     };
   },
   props: {
@@ -34,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .big-icon-container {
   display: flex;
   flex-direction: column;
