@@ -3,7 +3,7 @@
     <div class="big-icon__first-wrapper">
       <div class="big-icon__second-wrapper">
         <img
-          :src="backendUrl + icon.data.attributes.url"
+          :src="backendUrl + icon.icon.data.attributes.url"
           class="svg-white big-icon_icon"
         />
       </div>
@@ -23,15 +23,18 @@ export default {
   data() {
     return {
       backendUrl: "http://localhost:1337",
-
       iconColor: "#1b31de",
+      btnProps: {
+        link: "/oferta",
+        color: "#1976d2",
+        outlined: false,
+        text: "więcej",
+      },
     };
   },
+
   props: {
     icon: {
-      type: Object,
-    },
-    btnProps: {
       type: Object,
     },
   },

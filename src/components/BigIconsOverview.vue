@@ -5,13 +5,13 @@
       v-for="icon in icons"
       class="big-icons-overview_wrapper"
     >
-      <BigCard :icon="icon" :btnProps="icon.iconBtnProps"></BigCard>
+      <BigCard :icon="icon"></BigCard>
     </div>
   </div>
 </template>
 
 <script>
-import BigCard from '@/commons/BigCard.vue';
+import BigCard from "@/commons/BigCard.vue";
 
 export default {
   components: { BigCard },
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .big-icons-container {
   display: flex;
   flex-direction: column;

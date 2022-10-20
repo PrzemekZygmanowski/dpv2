@@ -2,27 +2,13 @@
   <v-container class="section-container pa-0 d-flex flex-column align-center">
     <v-container
       class="pa-0 ma-0 mb-8 small-about_container"
-      :class="`small-about_container-${service.orientation}`"
+      :class="`small-about_container-${orientation}`"
     >
       <div class="small-about_img-wrapper">
-        <img
-          class="small-about_img"
-          :src="service.imageUrl"
-          :alt="service.imageName"
-        />
+        <img class="small-about_img" :src="imageUrl" :alt="imageName" />
       </div>
       <div class="small-about_overview">
-        <Section-title :title="service.title"></Section-title>
-        <h4
-          class="section-small-subtitle"
-          v-show="service.subtitle"
-          v-html="service.subtitle"
-        ></h4>
-        <p
-          class="section-text"
-          v-show="service.about"
-          v-html="service.about"
-        ></p>
+        <Section-title :title="title"></Section-title>
         <div
           :key="`${price.label}-${price.amount}`"
           v-for="price in prices"
@@ -42,18 +28,19 @@
 
 <script>
 // @ is an alias to /src
-import SectionTitle from '@/commons/Section-Title.vue';
-import LinkButton from '@/commons/LinkButton.vue';
-import vuetify from '@/plugins/vuetify';
+import SectionTitle from "@/commons/Section-Title.vue";
+import LinkButton from "@/commons/LinkButton.vue";
+import vuetify from "@/plugins/vuetify";
 
 export default {
   vuetify,
   components: { SectionTitle, LinkButton },
 
   props: {
-    service: {
-      type: Object,
-    },
+    title: { type: String },
+    orientation: { type: String },
+    imageUrl: { type: String },
+    imageName: { type: String },
     btnProps: {
       type: Object,
     },
@@ -65,7 +52,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .small-about_title-container {
   width: 100%;
   text-align: center;

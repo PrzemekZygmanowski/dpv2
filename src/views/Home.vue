@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-if="loading" class="loading">Loading...</div>
+    <div v-if="loading" class="loading"><Loader></Loader></div>
+    <div v-if="error" class="error"><Error></Error></div>
     <div v-if="data" class="home">
       <MainHeader
         :title="this.data?.data[0].attributes.mainHeaderProps.title"
@@ -21,7 +22,13 @@
         :phoneNumbers="this.data?.data[0].attributes.phoneNumbers"
       />
       <MainService
-        :service="mainServiceProps.service"
+        :title="this.data?.data[0].attributes.Service.title"
+        :orientation="this.data?.data[0].attributes.Service.orientation"
+        :imageUrl="
+          backendUrl +
+          this.data?.data[0].attributes.Service.imageUrl.data[0].attributes.url
+        "
+        :imageName="this.data?.data[0].attributes.Service.imageName"
         :btnProps="mainServiceProps.btnProps"
         :prices="mainServiceProps.prices"
       ></MainService>
@@ -37,7 +44,8 @@ import MainHeader from "@/components/MainHeader.vue";
 import TextOverview from "@/components/Text-Overview.vue";
 import MainService from "@/components/MainService.vue";
 import BigIconOverview from "@/components/BigIconsOverview.vue";
-import { getData } from "../service/getData";
+import Error from "@/components/Error.vue";
+import Loader from "@/commons/Loader.vue";
 
 export default {
   name: "Home",
@@ -47,14 +55,15 @@ export default {
     TextOverview,
     MainService,
     BigIconOverview,
+    Loader,
+    Error,
   },
   data() {
     return {
       loading: false,
-      error: null,
+      error: false,
       data: null,
       backendUrl: "http://localhost:1337",
-      // mainHeaderProps: this.data?.data.attributes.mainHeaderProps
 
       mainHeaderProps: {
         title: "D&P",
@@ -132,41 +141,22 @@ export default {
     this.fetchData();
   },
   watch: {
-    // Re-fetch when route changes
     $route: "fetchData",
   },
   methods: {
     async fetchData() {
-      this.error = null;
+      this.error = false;
       this.loading = true;
       const response = await fetch(
         "http://localhost:1337/api/homes?populate=deep"
       );
       if (!response.ok) {
+        this.loading = false;
+        this.error = true;
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       this.data = await response.json();
-      console.log(this.data?.data[0].attributes.bigIconOverviewProps[0].icons);
-
       this.loading = false;
-      // return data;
-      // this.data = getData("http://localhost:1337/api/homes?populate=deep");
-      // console.log(this.data);
-      //   // replace `getPost` with your data fetching util / API wrapper
-      //   async function getData() {
-      //     console.log(data);
-
-      //     const response = await fetch(
-      //       "http://localhost:1337/api/homes?populate=deep"
-      //     );
-      //     if (!response.ok) {
-      //       throw new Error(`HTTP error! status: ${response.status}`);
-      //     }
-      //     this.loading = false;
-      //     this.data = await response.json();
-      //     console.log(this.data?.data.attributes.mainHeaderProps.title);
-      //   }
-      // )();
     },
   },
 };
