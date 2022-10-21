@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div v-if="loading" class="loading"><Loader></Loader></div>
+    <div v-if="loading" class="loading">
+      <Loader></Loader>
+    </div>
     <div v-if="error" class="error"><Error></Error></div>
     <div v-if="data" class="home">
       <MainHeader
@@ -29,8 +31,8 @@
           this.data?.data[0].attributes.Service.imageUrl.data[0].attributes.url
         "
         :imageName="this.data?.data[0].attributes.Service.imageName"
-        :btnProps="mainServiceProps.btnProps"
-        :prices="mainServiceProps.prices"
+        :btnProps="btnProps"
+        :prices="this.data?.data[0].attributes.Prices[0].Price"
       ></MainService>
       <BigIconOverview
         :icons="this.data?.data[0].attributes.bigIconOverviewProps[0].icons"
@@ -63,77 +65,14 @@ export default {
       loading: false,
       error: false,
       data: null,
-      backendUrl: "http://localhost:1337",
-
-      mainHeaderProps: {
-        title: "D&P",
-        subtitle: "TWÓJ DOSTAWCA GAZU",
-        image: "data/img/gas_flame.jpg",
-        logo: "data/img/logo.png",
-      },
-      textOverviewProps: {
-        title: "ZADZWOŃ I ZAMÓW GAZ",
-        text: " ",
-        phoneNumbers: [
-          {
-            id: 1,
-            number: "504-405-295",
-          },
-          {
-            id: 2,
-            number: "513-439-938",
-          },
-        ],
-      },
-      mainServiceProps: {
-        service: {
-          title: "Butle 11kg",
-          orientation: "left",
-          imageUrl: "data/img/butla_11.jpg",
-          imageName: "butla_11",
-        },
-        btnProps: {
-          link: "/oferta",
-          color: "#1976d2",
-          btnWidth: 340,
-          outlined: false,
-          text: "Dowiedz się więcej",
-        },
-        prices: [
-          { id: 1, label: "PROPAN 11kg", amount: "100 zł" },
-          { id: 2, label: "PROPAN BUTAN", amount: "95 zł" },
-          {
-            id: 3,
-            label: "PROPAN BUTAN SYFON (do wózka widłowego)",
-            amount: "95 zł",
-          },
-        ],
-      },
-      bigIconOverviewProps: {
-        icons: [
-          {
-            id: 1,
-            title: "butle turystyczne",
-            icon: "data/icons/fire-flame-simple-solid.svg",
-            iconBtnProps: {
-              link: "/oferta",
-              color: "#1976d2",
-              outlined: false,
-              text: "więcej",
-            },
-          },
-          {
-            id: 2,
-            title: "butle 33kg",
-            icon: "data/icons/fire-burner-solid.svg",
-            iconBtnProps: {
-              link: "/oferta",
-              color: "#1976d2",
-              outlined: false,
-              text: "więcej",
-            },
-          },
-        ],
+      backendUrl: import.meta.env.VITE_HOME_BACKEND_URL,
+      urlSuffix: "/api/homes?",
+      btnProps: {
+        link: "/oferta",
+        color: "#1976d2",
+        btnWidth: 340,
+        outlined: false,
+        text: "Dowiedz się więcej",
       },
     };
   },
@@ -145,18 +84,27 @@ export default {
   },
   methods: {
     async fetchData() {
+      debugger;
       this.error = false;
       this.loading = true;
-      const response = await fetch(
-        "http://localhost:1337/api/homes?populate=deep"
-      );
-      if (!response.ok) {
-        this.loading = false;
-        this.error = true;
-        throw new Error(`HTTP error! status: ${response.status}`);
+      let url;
+      try {
+        url = new URL(this.backendUrl + this.urlSuffix);
+        url.searchParams.append("populate", "deep");
+      } catch (error) {
+        console.error("There was an error!", error);
+        return;
       }
-      this.data = await response.json();
-      this.loading = false;
+      if (url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+          this.loading = false;
+          this.error = true;
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        this.data = await response.json();
+        this.loading = false;
+      }
     },
   },
 };

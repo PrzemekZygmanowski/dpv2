@@ -1,0 +1,72 @@
+{
+  "mainHeaderProps": {
+    "title": "D&P",
+    "subtitle": "TWÓJ DOSTAWCA GAZU",
+    "image": "data/img/gas_flame.jpg",
+    "logo": "data/img/logo.png"
+  },
+  "textOverviewProps": {
+    "title": "ZADZWOŃ I ZAMÓW GAZ",
+    "text": " ",
+    "phoneNumbers": [
+      {
+        "id": 1,
+        "number": "504-405-295"
+      },
+      {
+        "id": 2,
+        "number": "513-439-938"
+      }
+    ]
+  },
+  "mainServiceProps": {
+    "service": {
+      "title": "Butle 11kg",
+      "orientation": "left",
+      "imageUrl": "data/img/butla_11.jpg",
+      "imageName": "butla_11"
+    },
+    "btnProps": {
+      "link": "/oferta",
+      "color": "#1976d2",
+      "btnWidth": 340,
+      "outlined": false,
+      "text": "Dowiedz się więcej"
+    },
+    "prices": [
+      { "id": 1, "label": "PROPAN 11kg", "amount": "100 zł" },
+      { "id": 2, "label": "PROPAN BUTAN", "amount": "95 zł" },
+      {
+        "id": 3,
+        "label": "PROPAN BUTAN SYFON (do wózka widłowego)",
+        "amount": "95 zł"
+      }
+    ]
+  },
+  "bigIconOverviewProps": {
+    "icons": [
+      {
+        "id": 1,
+        "title": "butle turystyczne",
+        "icon": "data/icons/fire-flame-simple-solid.svg",
+        "iconBtnProps": {
+          "link": "/oferta",
+          "color": "#1976d2",
+          "outlined": false,
+          "text": "więcej"
+        }
+      },
+      {
+        "id": 2,
+        "title": "butle 33kg",
+        "icon": "data/icons/fire-burner-solid.svg",
+        "iconBtnProps": {
+          "link": "/oferta",
+          "color": "#1976d2",
+          "outlined": false,
+          "text": "więcej"
+        }
+      }
+    ]
+  }
+}

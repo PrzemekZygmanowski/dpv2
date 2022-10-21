@@ -50,41 +50,8 @@ export default {
       loading: false,
       error: false,
       data: null,
-      backendUrl: "http://localhost:1337",
-      mainHeaderProps: {
-        title: "Zarabiaj razem z nami",
-        image: "data/img/affiliance.jpg",
-      },
-      firstTextOverviewProps: {
-        title: "Chcesz nawiązać współpracę?",
-      },
-      secondTextOverviewProps: {
-        title: "Zainteresowaliśmy Cię",
-        text: "Skontaktuj się z nami",
-        phoneNumbers: [
-          {
-            id: 1,
-            number: "536-334-447",
-          },
-        ],
-      },
-      cards: [
-        {
-          id: 1,
-          title: "Twój własny punkt </br> wymiany butli",
-          text: "Podejmiemy współpracę z osobami chcącymi prowadzić nasz punkt wymiany butli gazowych. Współpraca nie wymaga żadnego wkładu własnego.",
-        },
-        {
-          id: 2,
-          title: "Masz już punkt?",
-          text: "Nic nie szkodzi. Nawiążemy również współpracę z osobami prowadzącymi już punkt wymiany butli, zaproponujemy konkurencyjne warunki współpracy",
-        },
-        {
-          id: 3,
-          title: "Punkt wymiany butli",
-          text: "Punkt można prowadzić przy własnym domu, sklepie, lub prowadząc działalność gospodarczą, bezpłatnie dostarczymy butle oraz klatkę do ich przechowywania",
-        },
-      ],
+      backendUrl: import.meta.env.VITE_HOME_BACKEND_URL,
+      urlSuffix: "/api/affiliations?",
     };
   },
   created() {
@@ -97,17 +64,25 @@ export default {
     async fetchData() {
       this.error = false;
       this.loading = true;
-      const response = await fetch(
-        "http://localhost:1337/api/affiliations?populate=deep"
-      );
-      if (!response.ok) {
-        this.loading = false;
-        this.error = true;
-        throw new Error(`HTTP error! status: ${response.status}`);
+      let url;
+      try {
+        url = new URL(this.backendUrl + this.urlSuffix);
+        url.searchParams.append("populate", "deep");
+      } catch (error) {
+        console.error("There was an error!", error);
+        return;
       }
-      this.data = await response.json();
-      console.log(this.data?.data[0].attributes);
-      this.loading = false;
+
+      if (url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+          this.loading = false;
+          this.error = true;
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        this.data = await response.json();
+        this.loading = false;
+      }
     },
   },
 };

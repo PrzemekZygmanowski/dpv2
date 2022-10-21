@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-overlay :value="overlay">
+    <v-overlay>
       <Section-title v-show="title" :title="title"></Section-title>
       <p>{{ text }}</p>
     </v-overlay>
@@ -24,6 +24,4 @@ export default {
 
 <style scoped lang="scss">
 @import "styles/global/_all.scss";
-.error.page {
-}
 </style>

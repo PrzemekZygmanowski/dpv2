@@ -53,43 +53,8 @@ export default {
       loading: false,
       error: false,
       data: null,
-      backendUrl: "http://localhost:1337",
-      mainHeaderProps: {
-        title: "Kontakt",
-        image: "data/img/gas-bottles-1750491_1280.jpg",
-      },
-      textOverviewProps: {
-        title: "Obszar działania",
-        text: "Nasz obszar działania to cała Łódź. Zrealizujey Twoje zamówienie do 90 minut od podjęcia decyzji!",
-      },
-      contactOverviewProps: {
-        title: "Możliwości kontaktu",
-        contactForOrders: [
-          {
-            id: 1,
-            number: "504-405-295",
-          },
-          {
-            id: 2,
-            number: "513-439-938",
-          },
-        ],
-        contacts: [
-          {
-            id: 1,
-            number: "536-334-447",
-          },
-        ],
-        mails: [
-          {
-            id: 1,
-            email: "dpgaz2020@gmail.com",
-          },
-        ],
-        secondTitle: "Indywidualna oferta",
-        offer:
-          "Jeśli jesteś zainteresowany indywidualną ofertą, skontaktuj sie z nami, na pewno przygotujemy dla Ciebie propozycję która Cię usatysfakcjonuje. Skontaktuj się z przedstawicielem handlowym",
-      },
+      backendUrl: import.meta.env.VITE_HOME_BACKEND_URL,
+      urlSuffix: "/api/contacts?",
     };
   },
   created() {
@@ -102,17 +67,25 @@ export default {
     async fetchData() {
       this.error = false;
       this.loading = true;
-      const response = await fetch(
-        "http://localhost:1337/api/contacts?populate=deep"
-      );
-      if (!response.ok) {
-        this.loading = false;
-        this.error = true;
-        throw new Error(`HTTP error! status: ${response.status}`);
+      let url;
+      try {
+        url = new URL(this.backendUrl + this.urlSuffix);
+        url.searchParams.append("populate", "deep");
+      } catch (error) {
+        console.error("There was an error!", error);
+        return;
       }
-      this.data = await response.json();
-      console.log(this.data?.data[0].attributes.mails);
-      this.loading = false;
+
+      if (url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+          this.loading = false;
+          this.error = true;
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        this.data = await response.json();
+        this.loading = false;
+      }
     },
   },
 };

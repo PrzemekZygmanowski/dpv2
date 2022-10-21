@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-overlay :value="overlay">
+    <v-overlay>
       <v-progress-circular
         color="primary"
         indeterminate
@@ -11,18 +11,5 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    overlay: false,
-  }),
-
-  watch: {
-    overlay(val) {
-      val &&
-        setTimeout(() => {
-          this.overlay = false;
-        }, 3000);
-    },
-  },
-};
+export default {};
 </script>
