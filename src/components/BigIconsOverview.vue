@@ -1,5 +1,10 @@
 <template>
-  <div class="section-container big-icons-container">
+  <div
+    class="section-container big-icons-container"
+    data-aos="opacity-on"
+    data-aos-ease="ease-in-out"
+    data-aos-duration="1500"
+  >
     <div
       :key="icon.id"
       v-for="icon in icons"

@@ -1,6 +1,12 @@
 <template>
   <div class="big-icon-container">
-    <div class="big-icon__first-wrapper">
+    <div
+      class="big-icon__first-wrapper"
+      data-aos="icon-rotate"
+      data-aos-ease="ease-in-out"
+      data-aos-duration="1500"
+      data-aos-delay="100"
+    >
       <div class="big-icon__second-wrapper">
         <img
           :src="backendUrl + icon.icon.data.attributes.url"

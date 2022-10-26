@@ -1,5 +1,10 @@
 <template transition="slide-y-transition">
-  <div class="section-container text-overview_container">
+  <div
+    class="section-container text-overview_container"
+    data-aos="opacity-on"
+    data-aos-ease="ease-in-out"
+    data-aos-duration="1500"
+  >
     <Section-title v-if="title" :title="title"></Section-title>
     <p v-if="text" class="section-text text-overview_text" v-html="text"></p>
     <div
@@ -19,7 +24,7 @@
 
 <script>
 // @ is an alias to /src
-import SectionTitle from '@/commons/Section-Title.vue';
+import SectionTitle from "@/commons/Section-Title.vue";
 
 export default {
   components: { SectionTitle },
@@ -39,7 +44,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .text-overview_container {
   display: flex;
   align-items: center;
@@ -50,7 +55,7 @@ export default {
     position: relative;
     display: inline-block;
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       height: 4px;
       background-color: $dp-yellow;

@@ -45,7 +45,7 @@
 </template>
 <script>
 // @ is an alias to /src
-import SectionTitle from '@/commons/Section-Title.vue';
+import SectionTitle from "@/commons/Section-Title.vue";
 
 export default {
   components: { SectionTitle },
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 
 .contact_link {
   position: relative;
@@ -82,7 +82,7 @@ export default {
   color: #1976d2;
   display: inline-block;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     height: 2px;
     background-color: $dp-yellow;

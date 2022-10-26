@@ -28,6 +28,9 @@
           "
           :imageName="service.service.imageName"
           :prices="service.prices"
+          :data-aos="`fade-${service.service.orientation}`"
+          data-aos-ease="ease-in-out"
+          data-aos-duration="1500"
         ></MainService>
       </div>
     </div>

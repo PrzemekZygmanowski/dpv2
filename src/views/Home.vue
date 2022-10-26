@@ -33,6 +33,9 @@
         :imageName="this.data?.data[0].attributes.Service.imageName"
         :btnProps="btnProps"
         :prices="this.data?.data[0].attributes.Prices[0].Price"
+        data-aos="opacity-on"
+        data-aos-ease="ease-in-out"
+        data-aos-duration="1500"
       ></MainService>
       <BigIconOverview
         :icons="this.data?.data[0].attributes.bigIconOverviewProps[0].icons"
@@ -84,7 +87,6 @@ export default {
   },
   methods: {
     async fetchData() {
-      debugger;
       this.error = false;
       this.loading = true;
       let url;

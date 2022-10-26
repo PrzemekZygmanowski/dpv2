@@ -25,6 +25,9 @@
           this.data?.data[0].attributes.contactOverviewProps.secondTitle
         "
         :offer="this.data?.data[0].attributes.contactOverviewProps.offer"
+        data-aos="opacity-on"
+        data-aos-ease="ease-in-out"
+        data-aos-duration="1500"
       ></ContactOverview>
     </div>
   </div>

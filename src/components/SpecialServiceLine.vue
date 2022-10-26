@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div
+    data-aos="opacity-on"
+    data-aos-ease="ease-in-out"
+    data-aos-duration="1500"
+  >
     <v-container v-if="!isMobile" class="section-container">
       <v-timeline :dense="isMobile" :reverse="!isMobile">
         <v-timeline-item v-for="card in cards" :key="card.id" :color="dotColor">
@@ -27,8 +31,8 @@
 
 <script>
 // @ is an alias to /src
-import breakPointMixin from '@/mixins/breakPointMixin.js';
-import TextOverview from './Text-Overview.vue';
+import breakPointMixin from "@/mixins/breakPointMixin.js";
+import TextOverview from "./Text-Overview.vue";
 
 export default {
   mixins: [breakPointMixin],
@@ -39,7 +43,7 @@ export default {
   // @ is an alias to /src
   data() {
     return {
-      dotColor: '#1976d2',
+      dotColor: "#1976d2",
     };
   },
   props: {
@@ -56,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 
 .v-timeline-item__dot {
   left: 0 !important;

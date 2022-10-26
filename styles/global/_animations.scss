@@ -1,0 +1,21 @@
+/////opacity on
+[data-aos="opacity-on"] {
+  filter: blur(2px);
+  opacity: 0;
+}
+/*  Animation ends here */
+[data-aos="opacity-on"].aos-animate {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/////rotate Icon
+[data-aos="icon-rotate"] {
+  opacity: 0;
+  transform: scale(1) rotateY(180deg);
+}
+/*  Animation ends here */
+[data-aos="icon-rotate"].aos-animate {
+  opacity: 1;
+  transform: scale(1) rotateY(360deg);
+}
